@@ -1,6 +1,6 @@
-package dev.slmpc.testclient.managers;
+package dev.slmpc.testclient.manager;
 
-import dev.slmpc.testclient.managers.impl.ModuleManager;
+import dev.slmpc.testclient.manager.impl.ModuleManager;
 
 public class Managers {
 

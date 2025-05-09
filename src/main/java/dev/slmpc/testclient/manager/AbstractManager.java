@@ -1,4 +1,4 @@
-package dev.slmpc.testclient.managers;
+package dev.slmpc.testclient.manager;
 
 public abstract class AbstractManager {
 

@@ -1,7 +1,7 @@
 package dev.slmpc.testclient;
 
 import com.mojang.logging.LogUtils;
-import dev.slmpc.testclient.managers.Managers;
+import dev.slmpc.testclient.manager.Managers;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -18,11 +18,10 @@ public class Client
 
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    public static IEventBus EVENT_BUS;
 
     public Client(FMLJavaModLoadingContext context)
     {
-        EVENT_BUS = context.getModEventBus();
+        Managers.init();
 
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -33,8 +32,6 @@ public class Client
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-            Managers.init();
-
             LOGGER.info("Test Client has been loaded!");
         }
     }
